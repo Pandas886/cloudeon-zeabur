@@ -11,7 +11,7 @@ WORKDIR ${CLOUDEON_HOME}
 ENV TZ Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
-
+RUN chmod 777 -R /usr/local/cloudeon
 
 # 健康检查
 HEALTHCHECK CMD curl -X POST -f http://localhost:7700 || exit 1
